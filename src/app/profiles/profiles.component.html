@@ -1,0 +1,27 @@
+<p>profiles works!</p>
+<div *ngIf="isloading" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+<table>
+    <tr *ngFor="let profile of profiles">
+        <td>
+            <span>{{ profile.email }}</span>
+            <span>{{ profile.profilename }}</span>
+         </td>
+        <td>{{ profile.profilename }} </td>
+        <td>{{ profile.dob }} </td>
+        <td>{{ profile.pob }} </td>
+        <td>{{ profile.category }} </td>
+        <td>{{ profile.matha }} </td>
+        <td>{{ profile.mothertongue }} </td>
+        <td>{{ profile.fathername }} </td>
+        <td>{{ profile.mothername }} </td>
+        <td>{{ profile.gotra }} </td>
+        <td>{{ profile.nakshatra }} </td>
+
+        <td>{{ profile.rashi }} </td>
+        <td>{{ profile.height }} </td>
+        <td>{{ profile.mothername }} </td>
+        <td>{{ profile.gotra }} </td>
+        <td>{{ profile.nakshatra }} </td>
+
+    </tr>
+</table>

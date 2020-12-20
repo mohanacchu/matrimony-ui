@@ -1,0 +1,70 @@
+<p>login works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <!-- Default form login -->
+      <form [formGroup]="loginform" (ngSubmit)="OnSubmit()">
+
+        <p class="h4 mb-4">Sign in</p>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">email</label>
+          <input
+            type="text"
+            id="email"
+            formControlName = "email"
+            class="form-control">
+            
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">password</label>
+          <input
+            type="text"
+            id="email"
+            formControlName = "password"
+            class="form-control">
+            
+        </div>
+
+
+        <div class="d-flex justify-content-around">
+          
+          <div>
+            <!-- Forgot password -->
+            <a href="">Forgot password?</a>
+          </div>
+        </div>
+
+        <!-- Sign in button -->
+        <button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button>
+
+        <!-- Register -->
+        <p>Not a member?
+          <a routerLink="/register">Register</a>
+        </p>
+
+        <!-- Social login -->
+        <p>or sign in with:</p>
+
+        <!-- <a type="button" class="light-blue-text mx-2">
+          <mdb-icon fab icon="facebook"></mdb-icon>
+        </a>
+        <a type="button" class="light-blue-text mx-2">
+          <mdb-icon fab icon="twitter"></mdb-icon>
+        </a>
+        <a type="button" class="light-blue-text mx-2">
+          <mdb-icon fab icon="linkedin"></mdb-icon>
+        </a>
+        <a type="button" class="light-blue-text mx-2">
+          <mdb-icon fab icon="github"></mdb-icon>
+        </a>
+      -->
+</form>
+<!-- Default form login -->
+
+    </div>
+  </div>
+</div>
