@@ -17,7 +17,7 @@ export class ApiService {
   private authObs:Observable<any>
   getprofiles(){
     return this.http.get(this.url_getprofiles,{headers:this.getauthtoken()})
-    console.log()
+    console.log('test')
    
   }
 
