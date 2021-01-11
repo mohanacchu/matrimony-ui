@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
     }
     ]
     signupform : FormGroup
-    selectedfile :File = null;
+    selectedfile :File
     
   constructor(private apiservice:ApiService) { }
   
@@ -45,6 +45,7 @@ export class RegisterComponent implements OnInit {
     this.signupform = new FormGroup({
       'profilename': new FormControl(null,[Validators.required,Validators.minLength(5)]),
       'email': new FormControl(null,[Validators.required,Validators.email]),
+      'password':new FormControl(null,[Validators.required]),
       'dob': new FormControl(null),
       'pob': new FormControl(null),
       'gender': new FormControl('male'),
@@ -93,8 +94,9 @@ export class RegisterComponent implements OnInit {
 
     // })
     console.log(this.signupform)
-    const fd = new FormData();
-    //fd.append('image',this.selectedfile,this.selectedfile.name)
+    const formdetails = this.signupform.value
+    const payload = Object.assign(formdetails,{imagedata:this.selectedfile})
+    
     this.apiservice.registerprofile(this.signupform.value,this.selectedfile)
     .subscribe(responce =>{
       // console.log(responce.json())
@@ -130,8 +132,10 @@ export class RegisterComponent implements OnInit {
   onFileSelected(event:any){
     console.log(event)
     console.log(this.signupform)
-    this.selectedfile = event.target.files[0]
-    console.log(this.selectedfile)
+    const imageData  = event.target.files[0]
+ 
+    this.selectedfile = imageData
+    console.log( this.selectedfile)
 
   }
 
