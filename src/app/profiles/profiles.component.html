@@ -1,10 +1,19 @@
 <p>profiles works!</p>
+<ul class="nav nav-tabs nav-justified">
+  <li class="active"><a href="/profiles">My Matches</a></li>
+  <li><a href="/myprofile">My Profile</a></li>
+
+</ul>
 <div *ngIf="isloading" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+<div>
 <table>
     <tr *ngFor="let profile of profiles">
+        <td><img src="{{'http://localhost:5000/api/profileimage?uuid='+ profile.uuid}}" style="max-height: 200px; max-width: 200px;"></td>
         <td>
-            <span>{{ profile.email }}</span>
-            <span>{{ profile.profilename }}</span>
+          <p><strong>{{ profile.profilename }}</strong></p>  
+          <p><strong>{{ profile.email }}</strong></p>
+            
+            
          </td>
         <td>{{ profile.profilename }} </td>
         <td>{{ profile.dob }} </td>
@@ -16,12 +25,23 @@
         <td>{{ profile.mothername }} </td>
         <td>{{ profile.gotra }} </td>
         <td>{{ profile.nakshatra }} </td>
-
         <td>{{ profile.rashi }} </td>
         <td>{{ profile.height }} </td>
-        <td>{{ profile.mothername }} </td>
-        <td>{{ profile.gotra }} </td>
-        <td>{{ profile.nakshatra }} </td>
+        <td>{{ profile.mobilenumber }} </td>
+        <td>{{ profile.alternatenumber }} </td>
+       
+        
+        <td>{{ profile.aboutvadhuvara }} </td>
+        <td>{{ profile.partnerpreference }} </td>
+        <td>{{ profile.highestqual }} </td>
 
+        <td>{{ profile.currentemployer }} </td>
+        <td>{{ profile.salary }} </td>
+        <td>{{ profile.familytype }} </td>
+
+        <td>{{ profile.familystatus }} </td>
+        <td>{{ profile.lastvisit }} </td>
+       
     </tr>
 </table>
+</div>

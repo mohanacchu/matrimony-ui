@@ -112,8 +112,8 @@
             <ng-select [items]="gothra" 
             bindLabel="label" 
             bindValue="value"
-            #selected
-            [(ngModel)]="asdf"
+           
+            
             (change)="getValues()"
             formControlName = "gothra"
             >
@@ -261,6 +261,7 @@
           </div>
           <div class="form-group">
             <label for="profilepic">Profile Pic</label>
+            <img [src]="imageSrc" alt="your image" style="max-height: 400px; max-width: 280px;border:2px" />
             <input type="file" formControlName = "profilepic" class="form-control" (change)="onFileSelected($event)"> 
             <!-- <button class="btn btn-primary" (click)="onupload()">Upload</button> -->
              

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/service/api.service';
 import {AuthResponceData, TestService} from 'src/app/test.service'
 import { Observable, Subscription } from 'rxjs';
+import { CommonModule } from '@angular/common';  
+import { BrowserModule } from '@angular/platform-browser';
 @Component({
   selector: 'app-profiles',
   templateUrl: './profiles.component.html',
@@ -23,13 +25,13 @@ export class ProfilesComponent implements OnInit {
     //   console.log(error)
     // })
     let authObs:Observable<AuthResponceData>
-    authObs = this.testservice.login('chetanmuralidhar@gmail.com','chetan')
+    // authObs = this.testservice.login('chetanmuralidhar@gmail.com','chetan')
     
-    authObs.subscribe(resdata=>{
-      console.log(resdata)
-    },error =>{
-      console.log(error)
-    })
+    // authObs.subscribe(resdata=>{
+    //   console.log(resdata)
+    // },error =>{
+    //   console.log(error)
+    // })
 
     this.apiservice.getprofiles()
     
@@ -37,7 +39,7 @@ export class ProfilesComponent implements OnInit {
       // console.log(responce.json())
       console.log(responce)
       this.profiles = responce
-      this.profiles = this.profiles['grooms']
+      this.profiles = this.profiles['profiles']
       this.isloading = false;
       // console.log(this.profiles)
       // console.log(responce._body)
@@ -54,11 +56,14 @@ export class ProfilesComponent implements OnInit {
         alert('Unexpected error occured')
         
         
-        console.log(error)
+        console.log(error.statusText)
       }
     }
 
     )
+  }
+  onlick( v1:any){
+
   }
 
 }

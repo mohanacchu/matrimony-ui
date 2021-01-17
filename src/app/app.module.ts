@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { TestService } from './test.service';
+import { MyprofileComponent } from './myprofile/myprofile.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { TestService } from './test.service';
     LoginComponent,
     RegisterComponent,
     ProfilesComponent,
+    MyprofileComponent,
     
   ],
   imports: [
@@ -31,7 +33,8 @@ import { TestService } from './test.service';
     RouterModule.forRoot([
       {path : '', component:LoginComponent},
       {path : 'register',component:RegisterComponent},
-      {path : 'profiles',component:ProfilesComponent}
+      {path : 'profiles',component:ProfilesComponent},
+      {path:'myprofile',component:MyprofileComponent}
       
     ])
   ],

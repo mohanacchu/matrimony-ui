@@ -11,9 +11,9 @@ import {TestService} from 'src/app/test.service';
 export class ApiService {
 
   constructor(private http: HttpClient,private router:Router) { }
-  private url_getprofiles = 'http://127.0.0.1:5000/grooms'
+  private url_getprofiles = 'http://127.0.0.1:5000/api/profile'
   private url_register = 'http://127.0.0.1:5000/api/register'
-  private url_login = '/api/userlogin'
+  private url_login = 'http://127.0.0.1:5000/api/userlogin'
   private authObs:Observable<any>
   getprofiles(){
     return this.http.get(this.url_getprofiles,{headers:this.getauthtoken()})

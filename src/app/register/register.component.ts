@@ -11,7 +11,7 @@ export class RegisterComponent implements OnInit {
   genders = ['M','F']
   
   asdf = ''
-
+  imageSrc: any;
   fvs = ['Orthodox','Traditional']
   fts = ['independent','joint']
   fss = ['rice','moderate']
@@ -133,7 +133,11 @@ export class RegisterComponent implements OnInit {
     console.log(event)
     console.log(this.signupform)
     const imageData  = event.target.files[0]
- 
+    const reader = new FileReader();
+    reader.readAsDataURL(imageData); 
+    reader.onload = (_event) => { 
+      this.imageSrc = reader.result; 
+    }
     this.selectedfile = imageData
     console.log( this.selectedfile)
 
