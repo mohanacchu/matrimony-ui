@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "matrimony-ui"
+  "defaultProject": "matrimony-ui",
+  "cli": {
+    "analytics": "23c4586d-4a4d-4d1f-9af2-15356e09932c"
+  }
 }

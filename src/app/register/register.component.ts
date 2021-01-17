@@ -23,16 +23,16 @@ export class RegisterComponent implements OnInit {
 
   gothra = [ 
     {
-        "value":"gauthama",
-        "label":"Gauthama"
+        "id":"gauthama",
+        "name":"Gauthama"
     },
     {
-        "value":"kashyapa",
-        "label":"Kashyapa"
+        "id":"kashyapa",
+        "name":"Kashyapa"
     },
     {
-        "value":"Vishwamithra",
-        "label":"Vishwamithra"
+        "id":"Vishwamithra",
+        "name":"Vishwamithra"
     }
     ]
     signupform : FormGroup
@@ -54,7 +54,7 @@ export class RegisterComponent implements OnInit {
       'mothertongue':new FormControl(null),
       'fathername':new FormControl(null),
       'mothername':new FormControl(null),
-      'gothra':new FormControl(null),
+      'gothra':new FormControl(''),
       'nakshatra': new FormControl(null),
       'rashi': new FormControl(null),
       'height':new FormControl(null),
